@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class CanvasFade : MonoBehaviour
 {
     #region Events
-    public event Action<CanvasFade> OnFadeBegin;
-    public event Action<CanvasFade> OnFadeEnd;
+    public event Action<CanvasFade, bool> OnFadeBegin;
+    public event Action<CanvasFade, bool> OnFadeEnd;
     public event Action<CanvasFade, float> OnFadeUpdate;
     #endregion
    
@@ -77,7 +77,7 @@ public class CanvasFade : MonoBehaviour
         fading = true;
         // Begin Action
         if (OnFadeBegin != null)
-            OnFadeBegin(this);
+            OnFadeBegin(this, fadeIn);
 
         // Counter from 0 to 1
         for (progress = 0f; progress <= 1f; progress += Time.deltaTime / duration)
@@ -106,6 +106,6 @@ public class CanvasFade : MonoBehaviour
         fading = false;
         // End Action
         if (OnFadeEnd != null)
-            OnFadeEnd(this);
+            OnFadeEnd(this, fadeIn);
     }
 }
