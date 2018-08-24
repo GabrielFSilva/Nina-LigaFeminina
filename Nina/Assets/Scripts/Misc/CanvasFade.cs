@@ -80,7 +80,7 @@ public class CanvasFade : MonoBehaviour
             OnFadeBegin(this, fadeIn);
 
         // Counter from 0 to 1
-        for (progress = 0f; progress <= 1f; progress += Time.deltaTime / duration)
+        for (progress = 0f; progress < 1f; progress += Time.deltaTime / duration)
         {
             if (fadeIn)
                 ChangeFadeAlpha(1f - progress);
