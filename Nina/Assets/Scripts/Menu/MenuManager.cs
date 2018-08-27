@@ -23,6 +23,8 @@ public class MenuManager : MonoBehaviour
             SceneManager.LoadScene("Level2");
         if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
             SceneManager.LoadScene("Level3");
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+            SceneManager.LoadScene("CutsceneTest");
     }
     public void OpenScene(string scene)
     {
@@ -31,6 +33,11 @@ public class MenuManager : MonoBehaviour
         nextScene = scene;
         fade.OnFadeEnd += ChangeScene;
         fade.FadeOut(1f,0.5f);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     private void ChangeScene(CanvasFade obj, bool fadeIn)
