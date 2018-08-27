@@ -7,11 +7,11 @@ namespace Cutscenes
 {
     public interface ICutsceneAction
     {
-
         event Action<ICutsceneAction> OnStarted;
         event Action<ICutsceneAction> OnEnded;
-
+    
         void Start();
+        void PlaySimultaneousActions();
         //void Pause();
     }
 }

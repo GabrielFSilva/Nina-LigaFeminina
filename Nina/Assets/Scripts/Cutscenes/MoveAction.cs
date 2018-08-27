@@ -11,6 +11,8 @@ namespace Cutscenes
         public event Action<ICutsceneAction> OnStarted;
         public event Action<ICutsceneAction> OnEnded;
 
+        public List<GameObject> simultaneousActions;
+
         public enum MovementDimension
         {
             MOVEMENT_2D,
@@ -47,8 +49,15 @@ namespace Cutscenes
             if (OnStarted != null)
                 OnStarted(this);
             StartCoroutine(Move());
+            PlaySimultaneousActions();
         }
-
+        public void PlaySimultaneousActions()
+        {
+            foreach (GameObject obj in simultaneousActions)
+            {
+                obj.GetComponent<ICutsceneAction>().Start();
+            }
+        }
         private IEnumerator Move()
         {
             if (startDelay >= 0.01f)
@@ -66,6 +75,7 @@ namespace Cutscenes
             if (OnEnded != null)
                 OnEnded(this);
         }
+        
     }
     /*
     [CustomEditor(typeof(MoveAction))]

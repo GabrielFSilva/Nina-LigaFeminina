@@ -19,6 +19,8 @@ namespace Cutscenes
         void ICutsceneAction.Start()
         {
             StartCoroutine(WaitForTouch());
+            if (OnStarted != null)
+                OnStarted(this);
         }
 
         private void OnColliderTouched(CustomCollider2D collider)
@@ -39,6 +41,11 @@ namespace Cutscenes
                 yield return new WaitForSeconds(endDelay);
             if (OnEnded != null)
                 OnEnded(this);
+        }
+
+        public void PlaySimultaneousActions()
+        {
+            throw new NotImplementedException();
         }
     }
 }

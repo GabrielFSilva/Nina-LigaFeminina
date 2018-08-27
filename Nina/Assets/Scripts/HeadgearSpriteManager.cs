@@ -14,9 +14,15 @@ public class HeadgearSpriteManager : MonoBehaviour
         GREEN
     }
 
-    public int activeHeadgearIndex;
-    public List<Image> headgearImages;
+    public int accessorieIndex;
+    public List<Sprite> accessoriesSprites;
+    public Image accessorieImage;
+    public int baseIndex;
+    public List<Sprite> baseSprites;
+    public Image baseImage;
+
     public CanvasFade fade;
+
     private string nextScene;
 
     // Use this for initialization
@@ -34,19 +40,37 @@ public class HeadgearSpriteManager : MonoBehaviour
             SceneManager.LoadScene("Level2");
         if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
             SceneManager.LoadScene("Level3");
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+            SceneManager.LoadScene("CutsceneTest");
     }
 
-    public void ChangeHeadgear(int direction)
+    public void ChangeAccessorie(int direction)
     {
-        headgearImages[activeHeadgearIndex].gameObject.SetActive(false);
-        activeHeadgearIndex += direction;
+        accessorieIndex += direction;
 
-        if (activeHeadgearIndex < 0)
-            activeHeadgearIndex = headgearImages.Count - 1;
-        else if (activeHeadgearIndex == headgearImages.Count)
-            activeHeadgearIndex = 0;
+        if (accessorieIndex < 0)
+            accessorieIndex = accessoriesSprites.Count - 1;
+        else if (accessorieIndex == accessoriesSprites.Count)
+            accessorieIndex = 0;
 
-        headgearImages[activeHeadgearIndex].gameObject.SetActive(true);
+        accessorieImage.sprite = accessoriesSprites[accessorieIndex];
+
+        if (accessorieImage.sprite)
+            accessorieImage.color = Color.white;
+        else
+            accessorieImage.color = new Color(1f, 1f, 1f, 0f);
+    }
+
+    public void ChangeBase(int direction)
+    {
+        baseIndex += direction;
+
+        if (baseIndex < 0)
+            baseIndex = baseSprites.Count - 1;
+        else if (baseIndex == baseSprites.Count)
+            baseIndex = 0;
+
+        baseImage.sprite = baseSprites[baseIndex];
     }
 
     public void OpenScene(string scene)
