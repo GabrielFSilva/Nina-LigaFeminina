@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
+    public event Action<Player> OnDied;
+
     // Moviment
     [Header("Moviment Attributes")]
     public Rigidbody2D rb;
@@ -59,7 +61,12 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float defenseSpeedMultiplier = 0.0f;
 
-   
+    // Blinking
+    [Space(10)]
+    [Header("Blinking")]
+    [SerializeField]
+    private bool blinking = false;
+    private float blinkingDuration = 1f;
 
     private SpriteRenderer sprite;
     private Animator anim;
@@ -162,5 +169,27 @@ public class Player : MonoBehaviour {
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce);
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && !blinking)
+        {
+            health -= 10f;
+            
+            gameObject.layer = LayerMask.NameToLayer("PlayerBlink");
+            blinking = true;
+            if (health <= 0f && OnDied != null)
+                OnDied(this);
+            else
+                StartCoroutine(EndBlinkingAfterTime(blinkingDuration));
+        }
+    }
+
+    IEnumerator EndBlinkingAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        blinking = false;
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 }

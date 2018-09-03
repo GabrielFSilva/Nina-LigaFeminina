@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Level2Manager : MonoBehaviour {
 
     public CanvasFade fade;
+    public Player player;
+
     public CustomTrigger2D doorToNextLevel;
     public string sceneToLoad;
     private bool changingScene = false;
@@ -15,6 +17,14 @@ public class Level2Manager : MonoBehaviour {
         fade.OnFadeEnd += FadeFinished;
         fade.FadeIn();
         doorToNextLevel.OnCustomTriggerEnter2D += DoorTriggered;
+        player.OnDied += OnPlayerDied;
+    }
+
+    private void OnPlayerDied(Player obj)
+    {
+        changingScene = true;
+        sceneToLoad = "Level2";
+        fade.FadeOut(2f, 1f);
     }
 
     private void FadeFinished(CanvasFade arg1, bool arg2)
@@ -28,6 +38,7 @@ public class Level2Manager : MonoBehaviour {
         if (obj.gameObject.layer == LayerMask.NameToLayer("Player") && !changingScene)
         {
             doorToNextLevel.OnCustomTriggerEnter2D -= DoorTriggered;
+            changingScene = true;
             sceneToLoad = "Level3";
             fade.FadeOut(2f, 1f);
         }
@@ -37,6 +48,7 @@ public class Level2Manager : MonoBehaviour {
         if (!changingScene)
         {
             doorToNextLevel.OnCustomTriggerEnter2D -= DoorTriggered;
+            changingScene = true;
             sceneToLoad = "Menu";
             fade.FadeOut(2f, 1f);
         }
