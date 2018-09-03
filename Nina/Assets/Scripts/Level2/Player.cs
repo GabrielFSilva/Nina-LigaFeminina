@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -22,6 +23,16 @@ public class Player : MonoBehaviour {
     private float jumpForce = 850f;
     public Transform groundCheck;
     public LayerMask groundLayer;
+
+    // Health
+    [Space(10)]
+    [Header("Health")]
+    [SerializeField]
+    private float health;
+    [SerializeField]
+    private float maxHealth = 100f;
+    [SerializeField]
+    private Scrollbar healthBar;
 
     // Attack
     [Space(10)]
@@ -55,6 +66,8 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        health = maxHealth;
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
@@ -92,6 +105,8 @@ public class Player : MonoBehaviour {
         {
             EnableDefense(false);
         }
+
+        healthBar.size = health / maxHealth;
     }
 
     void FixedUpdate()

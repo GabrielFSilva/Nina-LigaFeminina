@@ -14,9 +14,9 @@ public class HeadgearSpriteManager : MonoBehaviour
         GREEN
     }
 
-    public int accessorieIndex;
+    public int accessoryIndex;
     public List<Sprite> accessoriesSprites;
-    public Image accessorieImage;
+    public Image accessoryImage;
     public int baseIndex;
     public List<Sprite> baseSprites;
     public Image baseImage;
@@ -46,19 +46,19 @@ public class HeadgearSpriteManager : MonoBehaviour
 
     public void ChangeAccessorie(int direction)
     {
-        accessorieIndex += direction;
+        accessoryIndex += direction;
 
-        if (accessorieIndex < 0)
-            accessorieIndex = accessoriesSprites.Count - 1;
-        else if (accessorieIndex == accessoriesSprites.Count)
-            accessorieIndex = 0;
+        if (accessoryIndex < 0)
+            accessoryIndex = accessoriesSprites.Count - 1;
+        else if (accessoryIndex == accessoriesSprites.Count)
+            accessoryIndex = 0;
 
-        accessorieImage.sprite = accessoriesSprites[accessorieIndex];
+        accessoryImage.sprite = accessoriesSprites[accessoryIndex];
 
-        if (accessorieImage.sprite)
-            accessorieImage.color = Color.white;
+        if (accessoryImage.sprite)
+            accessoryImage.color = Color.white;
         else
-            accessorieImage.color = new Color(1f, 1f, 1f, 0f);
+            accessoryImage.color = new Color(1f, 1f, 1f, 0f);
     }
 
     public void ChangeBase(int direction)

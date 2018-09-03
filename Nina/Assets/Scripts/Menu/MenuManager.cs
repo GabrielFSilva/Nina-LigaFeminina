@@ -8,6 +8,9 @@ public class MenuManager : MonoBehaviour
     public CanvasFade fade;
     private string nextScene;
 
+    public GameObject mainMenuPanel;
+    public GameObject creditsPanel;
+
     void Start()
     {
         fade.FadeIn();
@@ -43,5 +46,17 @@ public class MenuManager : MonoBehaviour
     private void ChangeScene(CanvasFade obj, bool fadeIn)
     {
         SceneManager.LoadScene(nextScene);
+    }
+
+    public void CreditsClicked()
+    {
+        mainMenuPanel.SetActive(false);
+        creditsPanel.SetActive(true);
+    }
+
+    public void BackButtonClicked()
+    {
+        mainMenuPanel.SetActive(true);
+        creditsPanel.SetActive(false);
     }
 }

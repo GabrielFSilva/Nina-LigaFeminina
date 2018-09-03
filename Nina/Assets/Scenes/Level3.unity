@@ -335,14 +335,15 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.9622642, g: 0.8033998, b: 0.9591492, a: 1}
+    m_PressedColor: {r: 0.7830189, g: 0.54294235, b: 0.778507, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 136da5e72f11a644fa1a47aa6e5814a4,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 542cfd18963615b40bfef9bce0367b20, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -651,7 +652,7 @@ GameObject:
   - component: {fileID: 859998855}
   - component: {fileID: 859998856}
   m_Layer: 5
-  m_Name: Accessorie
+  m_Name: Accessory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -815,8 +816,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8278606, g: 0.7609469, b: 0.9433962, a: 1}
+    m_PressedColor: {r: 0.7327434, g: 0.5896226, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -936,14 +937,15 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.9622642, g: 0.8033998, b: 0.9591492, a: 1}
+    m_PressedColor: {r: 0.7830189, g: 0.54294235, b: 0.778507, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 136da5e72f11a644fa1a47aa6e5814a4,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 542cfd18963615b40bfef9bce0367b20, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1057,14 +1059,15 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.9622642, g: 0.8033998, b: 0.9591492, a: 1}
+    m_PressedColor: {r: 0.7830189, g: 0.54294235, b: 0.778507, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 136da5e72f11a644fa1a47aa6e5814a4,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 542cfd18963615b40bfef9bce0367b20, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1108,7 +1111,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 908ac32d637ef95419b0518ecf7748ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e24ebf005b8996640b65582587daa892, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1149,20 +1152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bae6dddf9350574aade9c437436783f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accessorieIndex: 0
+  accessoryIndex: 0
   accessoriesSprites:
   - {fileID: 0}
   - {fileID: 21300000, guid: fdc3778641abb19489e42bd57ee800ca, type: 3}
   - {fileID: 21300000, guid: ae3ac505eb73e1a459e2ac5a9ad4816b, type: 3}
   - {fileID: 21300000, guid: 3fea274ec7dfc4a47bc12a66bcc5a1ce, type: 3}
   - {fileID: 21300000, guid: fcab4fa5bca5dc34c9a8e15565a11bcf, type: 3}
-  - {fileID: 21300000, guid: 0a1ff4cc2b7c26344ae351f780d1f68d, type: 3}
   - {fileID: 21300000, guid: c144b2e1a0aefb04dad54fb8ba0bcb98, type: 3}
   - {fileID: 21300000, guid: 320477b371ddc124c99d042bbf2de583, type: 3}
   - {fileID: 21300000, guid: f2d27629544f06f4b9bdd08d9e66d380, type: 3}
   - {fileID: 21300000, guid: 067b52d9ffb6ae74a858f33853dc45d4, type: 3}
   - {fileID: 21300000, guid: ae15ebf0736a760439ae571779ac38a1, type: 3}
-  accessorieImage: {fileID: 859998856}
+  accessoryImage: {fileID: 859998856}
   baseIndex: 0
   baseSprites:
   - {fileID: 21300000, guid: 63b32391e074722408eeaa7ee77c986b, type: 3}
@@ -1279,14 +1281,15 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.9622642, g: 0.8033998, b: 0.9591492, a: 1}
+    m_PressedColor: {r: 0.7830189, g: 0.54294235, b: 0.778507, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 136da5e72f11a644fa1a47aa6e5814a4,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 542cfd18963615b40bfef9bce0367b20, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1330,7 +1333,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 136da5e72f11a644fa1a47aa6e5814a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 542cfd18963615b40bfef9bce0367b20, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
