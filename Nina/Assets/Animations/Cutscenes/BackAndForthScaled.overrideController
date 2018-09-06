@@ -1,0 +1,12 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: BackAndForthScaled
+  m_Controller: {fileID: 9100000, guid: 5fb562d165d010344b4b59ffe82861aa, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: da9d099a3358fef4a994130bab106e0b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c7836c98a522b77488cd97a46ef1c142, type: 2}

@@ -13,29 +13,12 @@ namespace Cutscenes
 
         public List<GameObject> simultaneousActions;
 
-        public enum MovementDimension
-        {
-            MOVEMENT_2D,
-            MOVEMENT_3D
-        };
-        public enum MarkersType
-        {
-            TRANSFORM,
-            VECTOR
-        };
-
-        public MovementDimension movementDimension;
-        public MarkersType markersType;
-
-
         public Transform target;
 
         [Header("Markers")]
         [SerializeField]
         public Transform startMarkerTransform;
         public Transform endMarkerTransform;
-        public Vector3 startMarkerVector;
-        public Vector3 endMarkerVector;
 
         [Header("Attributes")]
         public float movementDuration = 1f;
@@ -77,18 +60,4 @@ namespace Cutscenes
         }
         
     }
-    /*
-    [CustomEditor(typeof(MoveAction))]
-    public class MoveActionInspector : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            MoveAction script = (MoveAction)target;
-            if (script.markersType == MoveAction.MarkersType.TRANSFORM)
-            {
-                script.startMarkerTransform = (Transform)EditorGUILayout.ObjectField("Start:", script.startMarkerTransform, typeof(Transform), true);
-            }
-            DrawDefaultInspector();
-        }
-    }*/
 }
