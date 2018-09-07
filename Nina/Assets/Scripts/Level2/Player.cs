@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
 
     public event Action<Player> OnDied;
 
+    private SoundManager soundManager;
+
     // Moviment
     [Header("Moviment Attributes")]
     public Rigidbody2D rb;
@@ -73,6 +75,8 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        soundManager = SoundManager.instance;
+
         health = maxHealth;
 
         rb = GetComponent<Rigidbody2D>();
@@ -169,6 +173,7 @@ public class Player : MonoBehaviour {
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce);
+        soundManager.PlaySFX(SoundManager.SFXType.JUMP);
     }
 
     private void OnCollisionStay2D(Collision2D collision)

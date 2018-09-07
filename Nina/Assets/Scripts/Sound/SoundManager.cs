@@ -29,10 +29,12 @@ public class SoundManager : MonoBehaviour
 
     public enum SFXType
     {
-        CLICK
+        CLICK,
+        JUMP
     }
     public List<AudioClip> bgmClips = new List<AudioClip>();
     public AudioClip clickClip;
+    public AudioClip jumpClip;
 
     public AudioSource bgmSource;
 
@@ -50,7 +52,8 @@ public class SoundManager : MonoBehaviour
         bgmClips.Add(Resources.Load<AudioClip>("Music/BensoundCute"));
         bgmClips.Add(Resources.Load<AudioClip>("Music/SadUkuleleSong"));
 
-        clickClip = Resources.Load<AudioClip>("SFX/Click_Soft_01");
+        clickClip = Resources.Load<AudioClip>("SFX/ButtonClick");
+        jumpClip = Resources.Load<AudioClip>("SFX/Jump");
         //buttonPressClip = Resources.Load<AudioClip>("Sounds/SFX/Other SFX/Button Press");
 
     }
@@ -71,9 +74,12 @@ public class SoundManager : MonoBehaviour
         bgmSource.Play();
     }
 
-    public void PlaySFX(SFXType sfxType, float volume)
+    public void PlaySFX(SFXType sfxType, float volume = 1f)
     {
         if (sfxType == SFXType.CLICK)
             AudioSource.PlayClipAtPoint(clickClip, Camera.main.transform.position, volume);
+        else if (sfxType == SFXType.JUMP)
+            AudioSource.PlayClipAtPoint(jumpClip, Camera.main.transform.position, volume);
+
     }
 }
