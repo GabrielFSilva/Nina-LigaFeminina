@@ -72,6 +72,8 @@ public class Player : MonoBehaviour {
 
     private SpriteRenderer sprite;
     private Animator anim;
+    private Blink blink;
+
 
 	// Use this for initialization
 	void Start () {
@@ -82,10 +84,20 @@ public class Player : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        blink = GetComponent<Blink>();
         attackTrigger = transform.Find("AttackTrigger").
             GetComponentInChildren<CustomTrigger2D>();
         defenseTrigger = transform.Find("DefenseTrigger").
             GetComponentInChildren<CustomTrigger2D>();
+        defenseTrigger.OnCustomTriggerEnter2D += OnDefenseTrigger;
+    }
+
+    private void OnDefenseTrigger(Collider2D obj)
+    {
+        if(obj.gameObject.tag == "EnemyProjectile")
+        {
+            Destroy(obj.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -118,6 +130,15 @@ public class Player : MonoBehaviour {
         }
 
         healthBar.size = health / maxHealth;
+
+        if (blinking)
+        {
+            blink.StartBlink();
+        }
+        else
+        {
+            blink.StopBlink();
+        }
     }
 
     void FixedUpdate()
