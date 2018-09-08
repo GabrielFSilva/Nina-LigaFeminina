@@ -38,8 +38,11 @@ GameObject:
   - component: {fileID: 4598795102404096}
   - component: {fileID: 61876807594184268}
   - component: {fileID: 50167931031314352}
+  - component: {fileID: 58518691554025430}
   - component: {fileID: 114104204363878958}
   - component: {fileID: 114189291028135450}
+  - component: {fileID: 114329304293520878}
+  - component: {fileID: 114705829146286884}
   m_Layer: 10
   m_Name: EnemyRedness
   m_TagString: Enemy
@@ -67,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1906338407388788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.59, y: 1.3, z: 0}
+  m_LocalPosition: {x: 5.21, y: 3.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4286458410478314}
@@ -94,6 +97,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!58 &58518691554025430
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906338407388788}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 8
 --- !u!61 &61876807594184268
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -168,6 +186,34 @@ MonoBehaviour:
   moveSpeed: {x: 0, y: 1}
   movementDuration: 2
   flip: 0
+--- !u!114 &114329304293520878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906338407388788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29e7d9179ad4cf4eb360d84ff8a4193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1608980745491814, guid: d857c3f8c4645c142b8434eddcfb26f6,
+    type: 2}
+  shootCooldown: 3
+--- !u!114 &114705829146286884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906338407388788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3910c722e376e4080aea680fff7206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 212382876620877916}
+  baseSpriteLookingLeft: 1
+  player: {fileID: 0}
 --- !u!212 &212382876620877916
 SpriteRenderer:
   m_ObjectHideFlags: 1
