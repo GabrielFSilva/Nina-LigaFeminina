@@ -253,10 +253,10 @@ RectTransform:
   m_Father: {fileID: 2059292134}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22875002, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: 0}
-  m_SizeDelta: {x: 5.5999756, y: 1.2000122}
+  m_AnchoredPosition: {x: 2.5249634, y: 0}
+  m_SizeDelta: {x: 5.550003, y: 1.2}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &276247983
 MonoBehaviour:
@@ -769,7 +769,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 25, y: 0}
-  m_SizeDelta: {x: 400, y: 314.65}
+  m_SizeDelta: {x: 516, y: 307.7}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &998279645
 MonoBehaviour:
@@ -804,7 +804,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.6
   m_Text: "Programa\xE7\xE3o:\nGabriel Fonseca Silva\n\nArte:\nRaissa Schereen\nRicardo
-    Mendon\xE7a Scheeren\n\nOrienta\xE7\xE3o:\nJo\xE3o Ricardo Bittencourt\nRossana
+    Mendon\xE7a Scheeren\n\nM\xFAsicas:\nSad Ukulele Song / \"Sundown\" - Loebach
+    Music\nCute - Bensound\n\nOrienta\xE7\xE3o:\nJo\xE3o Ricardo Bittencourt\nRossana
     Baptista Queiroz"
 --- !u!222 &998279646
 CanvasRenderer:
@@ -990,7 +991,7 @@ Prefab:
     - target: {fileID: 224028152621283914, guid: f6b0f70b0b18d4b48b149388ca47fc9e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224028152621283914, guid: f6b0f70b0b18d4b48b149388ca47fc9e,
         type: 2}
@@ -1361,7 +1362,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: dd6ca5ddc0a778843bc3fbf450e6daf6, type: 3}
-    m_FontSize: 60
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1549,7 +1550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1964272340
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1649,7 +1650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2059292134
 RectTransform:
   m_ObjectHideFlags: 0
