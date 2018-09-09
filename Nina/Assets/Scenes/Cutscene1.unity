@@ -1351,11 +1351,16 @@ Prefab:
     - target: {fileID: 114349217511527788, guid: 0cce8db41da96e942b16d26f668519db,
         type: 2}
       propertyPath: startDelay
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1745724051694410, guid: 0cce8db41da96e942b16d26f668519db, type: 2}
       propertyPath: m_Name
       value: CameraZoomAction (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114349217511527788, guid: 0cce8db41da96e942b16d26f668519db,
+        type: 2}
+      propertyPath: movementDuration
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0cce8db41da96e942b16d26f668519db, type: 2}

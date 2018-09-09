@@ -39,7 +39,7 @@ public class Level2Manager : MonoBehaviour {
         {
             doorToNextLevel.OnCustomTriggerEnter2D -= DoorTriggered;
             changingScene = true;
-            sceneToLoad = "Level3";
+            sceneToLoad = "Cutscene3";
             fade.FadeOut(2f, 1f);
         }
     }

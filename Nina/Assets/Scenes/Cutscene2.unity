@@ -977,8 +977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1244233c70a39554a86a85b43dcfa8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm: 0
-  volume: 0.4
+  bgm: 1
+  volume: 0.3
 --- !u!4 &468320333
 Transform:
   m_ObjectHideFlags: 0
