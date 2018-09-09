@@ -22,16 +22,23 @@ public class Enemy : MonoBehaviour {
     private bool pushBackOnDefense;
 
     [SerializeField]
-    private GameObject deathAnimPrefab;
+    private Blink blink;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        blink = GetComponent<Blink>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (blink != null)
+        {
+            if (canBeHit)
+                blink.StopBlink();
+            else
+                blink.StartBlink();
+        }
 	}
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,10 +50,6 @@ public class Enemy : MonoBehaviour {
             health--;
             if (health <= 0)
             {
-                if (deathAnimPrefab != null)
-                {
-                    Instantiate(deathAnimPrefab, transform.position, Quaternion.identity).transform.localScale = transform.localScale;
-                }
                 Destroy(gameObject);
                 return;
             }

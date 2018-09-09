@@ -167,7 +167,7 @@ MonoBehaviour:
   pushBackForce: {x: 350, y: 350}
   pushBackCooldown: 1
   pushBackOnDefense: 1
-  deathAnimPrefab: {fileID: 0}
+  blink: {fileID: 0}
 --- !u!212 &212223532909448028
 SpriteRenderer:
   m_ObjectHideFlags: 1

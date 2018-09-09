@@ -23,8 +23,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private bool isGrounded;
     [SerializeField]
-    [Range(100f, 2500f)]
-    private float jumpForce = 850f;
+    [Range(1f, 100f)]
+    private float jumpForce = 5f;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -112,7 +112,15 @@ public class Player : MonoBehaviour {
             transform.localScale = Vector3.one;
         else if (h <= -0.1f)
             transform.localScale = new Vector3(-1f, 1f, 1f);
-        
+
+
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        UpdateSpeedMultiplier();
+
+        if (Input.GetAxis("Horizontal") != 0f)
+            Move();
+        if (Input.GetButtonDown("Jump") && isGrounded)
+            Jump();
 
         if (Input.GetMouseButtonDown(0) && canAttack && 
             !isAttacking && !isDefending)
@@ -146,13 +154,7 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-        UpdateSpeedMultiplier();
-       
-        if (Input.GetAxis("Horizontal") != 0f)
-            Move();
-        if (Input.GetButtonDown("Jump") && isGrounded && !isAttacking && !isDefending)
-            Jump();
+      
     }
 
     private void StopAttack()
@@ -198,23 +200,36 @@ public class Player : MonoBehaviour {
     }
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce);
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         soundManager.PlaySFX(SoundManager.SFXType.JUMP);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && !blinking)
+        if (collision.gameObject.tag == "Enemy"  && !blinking)
         {
-            health -= 10f;
-            
-            gameObject.layer = LayerMask.NameToLayer("PlayerBlink");
-            blinking = true;
-            if (health <= 0f && OnDied != null)
-                OnDied(this);
-            else
-                StartCoroutine(EndBlinkingAfterTime(blinkingDuration));
+            TakeDamage();
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemyProjectile" && !blinking)
+        {
+            TakeDamage();
+        }
+    }
+
+    private void TakeDamage()
+    {
+        health -= 10f;
+
+        gameObject.layer = LayerMask.NameToLayer("PlayerBlink");
+        blinking = true;
+        if (health <= 0f && OnDied != null)
+            OnDied(this);
+        else
+            StartCoroutine(EndBlinkingAfterTime(blinkingDuration));
     }
 
     IEnumerator EndBlinkingAfterTime(float time)
