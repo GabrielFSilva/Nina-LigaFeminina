@@ -558,7 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 949378453}
   cutsceneManager: {fileID: 1415439912}
-  nextScene: Level2
+  nextScene: Cutscene2
 --- !u!4 &284430059
 Transform:
   m_ObjectHideFlags: 0
@@ -1215,7 +1215,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 94.537994, y: 17.92463}
+  m_Size: {x: 102.25396, y: 17.92463}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1227,7 +1227,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042211940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.18, y: -0.456, z: 0}
+  m_LocalPosition: {x: 35.038, y: -0.456, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgm: 0
-  volume: 0.5
+  volume: 0.4
 --- !u!4 &1107618827
 Transform:
   m_ObjectHideFlags: 0

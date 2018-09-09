@@ -10,7 +10,7 @@ public class IntroSceneManager : MonoBehaviour
 
     void Start()
     {
-        fade.FadeIn(1f, 2f);
+        fade.FadeIn(1f, 3f);
         fade.OnFadeEnd += Fade_OnFadeEnd;
     }
 

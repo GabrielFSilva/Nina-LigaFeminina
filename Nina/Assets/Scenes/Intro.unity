@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgm: 0
-  volume: 0.5
+  volume: 0.4
 --- !u!1 &2105303288
 GameObject:
   m_ObjectHideFlags: 0
