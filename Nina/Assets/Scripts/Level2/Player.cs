@@ -46,6 +46,8 @@ public class Player : MonoBehaviour {
     private bool canAttack = true;
     private CustomTrigger2D attackTrigger;
     [SerializeField]
+    private SpriteRenderer attackSprite;
+    [SerializeField]
     [Range(0f, 2f)]
     private float attackDuration = 1f;
     [SerializeField]
@@ -60,6 +62,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private bool isDefending;
     private CustomTrigger2D defenseTrigger;
+    [SerializeField]
+    private SpriteRenderer defenseSprite;
     [SerializeField]
     private float defenseSpeedMultiplier = 0.0f;
 
@@ -108,11 +112,9 @@ public class Player : MonoBehaviour {
             transform.localScale = Vector3.one;
         else if (h <= -0.1f)
             transform.localScale = new Vector3(-1f, 1f, 1f);
+        
 
-            anim.SetFloat("Speed", Mathf.Abs(h));
-        anim.SetBool("Jumping", !isGrounded);
-
-        if (Input.GetMouseButtonDown(0) && isGrounded && canAttack && 
+        if (Input.GetMouseButtonDown(0) && canAttack && 
             !isAttacking && !isDefending)
         {
             canAttack = false;
@@ -120,7 +122,7 @@ public class Player : MonoBehaviour {
             Invoke("StopAttack", attackDuration);
             Invoke("ResetCanAttack", attackCooldown);
         }
-        else if (Input.GetMouseButtonDown(1) && isGrounded && !isAttacking && !isDefending)
+        else if (Input.GetMouseButtonDown(1) && !isAttacking && !isDefending)
         {
             EnableDefense(true);
         }
@@ -139,6 +141,7 @@ public class Player : MonoBehaviour {
         {
             blink.StopBlink();
         }
+        
     }
 
     void FixedUpdate()
@@ -163,8 +166,9 @@ public class Player : MonoBehaviour {
     private void EnableAttack(bool enable)
     {
         isAttacking = enable;
-        anim.SetBool("Attacking", enable);
         attackTrigger.trigger.enabled = enable;
+        attackSprite.enabled = enable;
+        anim.SetBool("Attacking", enable);
     }
 
     private void StopDefense()
@@ -174,8 +178,9 @@ public class Player : MonoBehaviour {
     private void EnableDefense(bool enable)
     {
         isDefending = enable;
-        anim.SetBool("Defending", enable);
         defenseTrigger.trigger.enabled = enable;
+        defenseSprite.enabled = enable;
+        anim.SetBool("Defending", enable);
     }
 
     private void UpdateSpeedMultiplier()
