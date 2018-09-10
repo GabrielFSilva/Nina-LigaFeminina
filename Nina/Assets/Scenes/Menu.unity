@@ -769,7 +769,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 25, y: 0}
-  m_SizeDelta: {x: 516, y: 307.7}
+  m_SizeDelta: {x: 326.02, y: 307.7}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &998279645
 MonoBehaviour:
@@ -803,9 +803,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.6
-  m_Text: "Programa\xE7\xE3o:\nGabriel Fonseca Silva\n\nArte:\nRaissa Schereen\nRicardo
-    Mendon\xE7a Scheeren\n\nM\xFAsicas:\nSad Ukulele Song / \"Sundown\" - Loebach
-    Music\nCute - Bensound\n\nOrienta\xE7\xE3o:\nJo\xE3o Ricardo Bittencourt\nRossana
+  m_Text: "Programa\xE7\xE3o:\n-Gabriel Fonseca Silva\n\nArte:\n-Raissa Schereen\n-Ricardo
+    Mendon\xE7a Scheeren\n\nOrienta\xE7\xE3o:\n-Jo\xE3o Ricardo Bittencourt\n-Rossana
     Baptista Queiroz"
 --- !u!222 &998279646
 CanvasRenderer:
@@ -1232,6 +1231,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1543232406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1543232407}
+  - component: {fileID: 1543232409}
+  - component: {fileID: 1543232408}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1543232407
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543232406}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9998721, y: 0.9998721, z: 0.9998721}
+  m_Children: []
+  m_Father: {fileID: 1964272340}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -10, y: -10}
+  m_SizeDelta: {x: 430.23, y: 307.7}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &1543232408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543232406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: dd6ca5ddc0a778843bc3fbf450e6daf6, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 2
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 30
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0.6
+  m_Text: "M\xFAsicas:\n-Sad Ukulele Song / \"Sundown\" - Loebach Music\n-Cute - Bensound\n\nEfeitos
+    Sonoros:\n-UI Sound Effects Library - Little UI Robot\n-Impact - Iwan 'qubodup'
+    Gabovitch\n-Battle Sound Effect - artisticdude\n"
+--- !u!222 &1543232409
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543232406}
 --- !u!1 &1712098684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,6 +1639,7 @@ RectTransform:
   - {fileID: 1256586246}
   - {fileID: 633687065}
   - {fileID: 998279644}
+  - {fileID: 1543232407}
   m_Father: {fileID: 1377701264}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

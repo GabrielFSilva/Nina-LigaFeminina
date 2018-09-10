@@ -32,13 +32,17 @@ public class SoundManager : MonoBehaviour
         CLICK,
         JUMP,
         ENEMY_SHOOT,
-        DEFEND
+        DEFEND,
+        PLAYER_ATTACK,
+        ENEMY_HIT
     }
     public List<AudioClip> bgmClips = new List<AudioClip>();
+    public List<AudioClip> enemyHitClips = new List<AudioClip>();
     public AudioClip clickClip;
     public AudioClip jumpClip;
     public AudioClip enemyShootClip;
     public AudioClip defendClip;
+    public AudioClip playerAttackClip;
     public AudioSource bgmSource;
 
     private BGMType currentBGMType = BGMType.NONE;
@@ -57,8 +61,11 @@ public class SoundManager : MonoBehaviour
 
         clickClip = Resources.Load<AudioClip>("SFX/ButtonClick");
         jumpClip = Resources.Load<AudioClip>("SFX/Jump");
+        playerAttackClip = Resources.Load<AudioClip>("SFX/PlayerAttack");
         defendClip = Resources.Load<AudioClip>("SFX/Defend");
         enemyShootClip = Resources.Load<AudioClip>("SFX/EnemyShot");
+        enemyHitClips.Add(Resources.Load<AudioClip>("SFX/EnemyHit1"));
+        enemyHitClips.Add(Resources.Load<AudioClip>("SFX/EnemyHit2"));
         //buttonPressClip = Resources.Load<AudioClip>("Sounds/SFX/Other SFX/Button Press");
 
     }
@@ -81,14 +88,28 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySFX(SFXType sfxType, float volume = 1f)
     {
-        if (sfxType == SFXType.CLICK)
-            AudioSource.PlayClipAtPoint(clickClip, Camera.main.transform.position, volume);
-        else if (sfxType == SFXType.JUMP)
-            AudioSource.PlayClipAtPoint(jumpClip, Camera.main.transform.position, volume);
-        else if (sfxType == SFXType.ENEMY_SHOOT)
-            AudioSource.PlayClipAtPoint(enemyShootClip, Camera.main.transform.position, volume);
-        else if (sfxType == SFXType.DEFEND)
-            AudioSource.PlayClipAtPoint(defendClip, Camera.main.transform.position, volume);
+        AudioSource.PlayClipAtPoint(GetClip(sfxType), Camera.main.transform.position, volume);
+    }
+    public void PlaySFXAtPosition(SFXType sfxType, Vector3 position, float volume = 1f)
+    {
+        position.z = Camera.main.transform.position.z;
+        AudioSource.PlayClipAtPoint(GetClip(sfxType), position, volume);
+    }
 
+    private AudioClip GetClip(SFXType sfxType)
+    {
+        if (sfxType == SFXType.CLICK)
+            return clickClip;
+        else if (sfxType == SFXType.JUMP)
+            return jumpClip;
+        else if (sfxType == SFXType.ENEMY_SHOOT)
+            return enemyShootClip;
+        else if (sfxType == SFXType.DEFEND)
+            return defendClip;
+        else if (sfxType == SFXType.PLAYER_ATTACK)
+            return playerAttackClip;
+        else if (sfxType == SFXType.ENEMY_HIT)
+            return enemyHitClips[Random.Range(0, enemyHitClips.Count)];
+        return clickClip;
     }
 }

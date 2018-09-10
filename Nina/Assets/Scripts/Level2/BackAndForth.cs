@@ -16,7 +16,7 @@ public class BackAndForth : MonoBehaviour
 
 	void Start () {
         if (movementDuration >= 0.1f)
-            InvokeRepeating("Turn", Random.Range(0f, movementDuration),movementDuration);
+            InvokeRepeating("Turn", movementDuration,movementDuration);
     }
 	
 	// Update is called once per frame

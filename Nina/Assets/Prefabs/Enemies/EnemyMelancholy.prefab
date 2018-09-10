@@ -39,7 +39,8 @@ GameObject:
   - component: {fileID: 61960353789959148}
   - component: {fileID: 50301840796539818}
   - component: {fileID: 114538580251910522}
-  - component: {fileID: 114142890059240532}
+  - component: {fileID: 114585353659314430}
+  - component: {fileID: 114169751348349528}
   m_Layer: 10
   m_Name: EnemyMelancholy
   m_TagString: Enemy
@@ -54,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1899889701372404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.95, y: 1.36, z: 0}
+  m_LocalPosition: {x: 105.92, y: 1.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4358383682113180}
@@ -93,7 +94,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &61960353789959148
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -137,7 +138,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114142890059240532
+--- !u!114 &114169751348349528
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -148,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a031cbc86263b43b1edeb2af2ace99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: {x: 1.35, y: 0}
-  movementDuration: 5
+  moveSpeed: {x: 1.5, y: 0}
+  movementDuration: 3
   flip: 1
 --- !u!114 &114538580251910522
 MonoBehaviour:
@@ -164,10 +165,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   hitCooldown: 1
-  pushBackForce: {x: 100, y: 0}
+  pushBackForce: {x: 0, y: 0}
   pushBackCooldown: 1
   pushBackOnDefense: 1
-  deathAnimPrefab: {fileID: 0}
+  blink: {fileID: 0}
+  maxVelocity: 1
+--- !u!114 &114585353659314430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899889701372404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a539d1dfc0a705408b459cfdcbca013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 212645394024365304}
+  alphaWhenTransparent: 0.3
+  timeOn: 0.2
+  timeOff: 0.2
+  blinking: 0
 --- !u!212 &212645394024365304
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -22,9 +22,12 @@ public class Level2Manager : MonoBehaviour {
 
     private void OnPlayerDied(Player obj)
     {
-        changingScene = true;
-        sceneToLoad = "Level2";
-        fade.FadeOut(2f, 1f);
+        if (!changingScene)
+        {
+            changingScene = true;
+            sceneToLoad = "Level2";
+            fade.FadeOut(2f, 1f);
+        }
     }
 
     private void FadeFinished(CanvasFade arg1, bool arg2)
@@ -56,13 +59,6 @@ public class Level2Manager : MonoBehaviour {
 
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
-        if (Input.GetKeyDown(KeyCode.M))
-            SceneManager.LoadScene("Menu");
-        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-            SceneManager.LoadScene("Level2");
-        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-            SceneManager.LoadScene("Level3");
+        
     }
 }

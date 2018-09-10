@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour {
     [SerializeField]
     private Blink blink;
 
+    public bool maxVelocity = true;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +42,11 @@ public class Enemy : MonoBehaviour {
                 blink.StartBlink();
         }
 	}
+    private void FixedUpdate()
+    {
+        if (maxVelocity && rb.velocity.magnitude >= 3f)
+            rb.velocity = rb.velocity.normalized * 3f;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -48,6 +55,7 @@ public class Enemy : MonoBehaviour {
             Invoke("ResetCanBeHit", hitCooldown);
             canBeHit = false;
             health--;
+            SoundManager.instance.PlaySFXAtPosition(SoundManager.SFXType.ENEMY_HIT, transform.position, 0.8f);
             if (health <= 0)
             {
                 Destroy(gameObject);

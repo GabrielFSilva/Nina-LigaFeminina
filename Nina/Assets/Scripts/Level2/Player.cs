@@ -120,7 +120,8 @@ public class Player : MonoBehaviour {
 
         if (Input.GetAxis("Horizontal") != 0f)
             Move();
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
+            && isGrounded)
             Jump();
 
         if (Input.GetMouseButtonDown(0) && canAttack && 
@@ -130,6 +131,7 @@ public class Player : MonoBehaviour {
             EnableAttack(true);
             Invoke("StopAttack", attackDuration);
             Invoke("ResetCanAttack", attackCooldown);
+            soundManager.PlaySFX(SoundManager.SFXType.PLAYER_ATTACK, 0.5f);
         }
         else if (Input.GetMouseButtonDown(1) && !isAttacking && !isDefending)
         {
@@ -228,7 +230,10 @@ public class Player : MonoBehaviour {
         gameObject.layer = LayerMask.NameToLayer("PlayerBlink");
         blinking = true;
         if (health <= 0f && OnDied != null)
+        {
             OnDied(this);
+            this.enabled = false;
+        }
         else
             StartCoroutine(EndBlinkingAfterTime(blinkingDuration));
     }

@@ -30,21 +30,7 @@ public class HeadgearSpriteManager : MonoBehaviour
         fade.FadeIn();
     }
 	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
-        if (Input.GetKeyDown(KeyCode.M))
-            SceneManager.LoadScene("Menu");
-        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-            SceneManager.LoadScene("Level2");
-        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-            SceneManager.LoadScene("Level3");
-        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
-            SceneManager.LoadScene("CutsceneTest");
-    }
-
-    public void ChangeAccessorie(int direction)
+	public void ChangeAccessorie(int direction)
     {
         accessoryIndex += direction;
 

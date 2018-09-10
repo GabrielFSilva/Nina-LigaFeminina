@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114189291028135450}
   - component: {fileID: 114705829146286884}
   - component: {fileID: 114483101348108834}
+  - component: {fileID: 114431824817112210}
   m_Layer: 10
   m_Name: EnemyRedness
   m_TagString: Enemy
@@ -150,12 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a852193498d196747a9a290a4c1fa33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 3
   hitCooldown: 1
-  pushBackForce: {x: 350, y: 350}
+  pushBackForce: {x: 0, y: 0}
   pushBackCooldown: 1
-  pushBackOnDefense: 1
+  pushBackOnDefense: 0
   blink: {fileID: 0}
+  maxVelocity: 1
 --- !u!114 &114189291028135450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,6 +172,23 @@ MonoBehaviour:
   moveSpeed: {x: 0, y: 1}
   movementDuration: 2
   flip: 0
+--- !u!114 &114431824817112210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906338407388788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a539d1dfc0a705408b459cfdcbca013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 212382876620877916}
+  alphaWhenTransparent: 0.3
+  timeOn: 0.2
+  timeOff: 0.2
+  blinking: 0
 --- !u!114 &114483101348108834
 MonoBehaviour:
   m_ObjectHideFlags: 1
