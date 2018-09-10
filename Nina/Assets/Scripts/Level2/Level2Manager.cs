@@ -54,6 +54,7 @@ public class Level2Manager : MonoBehaviour {
         }
     }
 
+
     void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();

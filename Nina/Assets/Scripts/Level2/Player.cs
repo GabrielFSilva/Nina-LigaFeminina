@@ -100,6 +100,7 @@ public class Player : MonoBehaviour {
     {
         if(obj.gameObject.tag == "EnemyProjectile")
         {
+            soundManager.PlaySFX(SoundManager.SFXType.DEFEND);
             Destroy(obj.gameObject);
         }
     }

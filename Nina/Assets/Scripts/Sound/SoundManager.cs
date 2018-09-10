@@ -30,12 +30,15 @@ public class SoundManager : MonoBehaviour
     public enum SFXType
     {
         CLICK,
-        JUMP
+        JUMP,
+        ENEMY_SHOOT,
+        DEFEND
     }
     public List<AudioClip> bgmClips = new List<AudioClip>();
     public AudioClip clickClip;
     public AudioClip jumpClip;
-
+    public AudioClip enemyShootClip;
+    public AudioClip defendClip;
     public AudioSource bgmSource;
 
     private BGMType currentBGMType = BGMType.NONE;
@@ -54,6 +57,8 @@ public class SoundManager : MonoBehaviour
 
         clickClip = Resources.Load<AudioClip>("SFX/ButtonClick");
         jumpClip = Resources.Load<AudioClip>("SFX/Jump");
+        defendClip = Resources.Load<AudioClip>("SFX/Defend");
+        enemyShootClip = Resources.Load<AudioClip>("SFX/EnemyShot");
         //buttonPressClip = Resources.Load<AudioClip>("Sounds/SFX/Other SFX/Button Press");
 
     }
@@ -80,6 +85,10 @@ public class SoundManager : MonoBehaviour
             AudioSource.PlayClipAtPoint(clickClip, Camera.main.transform.position, volume);
         else if (sfxType == SFXType.JUMP)
             AudioSource.PlayClipAtPoint(jumpClip, Camera.main.transform.position, volume);
+        else if (sfxType == SFXType.ENEMY_SHOOT)
+            AudioSource.PlayClipAtPoint(enemyShootClip, Camera.main.transform.position, volume);
+        else if (sfxType == SFXType.DEFEND)
+            AudioSource.PlayClipAtPoint(defendClip, Camera.main.transform.position, volume);
 
     }
 }

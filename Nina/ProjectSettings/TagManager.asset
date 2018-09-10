@@ -21,9 +21,9 @@ TagManager:
   - PlayerBlink
   - Enemies
   - Player
-  - 
-  - 
-  - 
+  - RednessTrigger
+  - PlayerAttack
+  - PlayerDefense
   - 
   - 
   - 

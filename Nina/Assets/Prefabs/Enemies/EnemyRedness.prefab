@@ -38,11 +38,10 @@ GameObject:
   - component: {fileID: 4598795102404096}
   - component: {fileID: 61876807594184268}
   - component: {fileID: 50167931031314352}
-  - component: {fileID: 58518691554025430}
   - component: {fileID: 114104204363878958}
   - component: {fileID: 114189291028135450}
-  - component: {fileID: 114329304293520878}
   - component: {fileID: 114705829146286884}
+  - component: {fileID: 114483101348108834}
   m_Layer: 10
   m_Name: EnemyRedness
   m_TagString: Enemy
@@ -97,21 +96,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!58 &58518691554025430
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1906338407388788}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 8
 --- !u!61 &61876807594184268
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -171,7 +155,7 @@ MonoBehaviour:
   pushBackForce: {x: 350, y: 350}
   pushBackCooldown: 1
   pushBackOnDefense: 1
-  deathAnimPrefab: {fileID: 0}
+  blink: {fileID: 0}
 --- !u!114 &114189291028135450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,7 +170,7 @@ MonoBehaviour:
   moveSpeed: {x: 0, y: 1}
   movementDuration: 2
   flip: 0
---- !u!114 &114329304293520878
+--- !u!114 &114483101348108834
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -199,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1608980745491814, guid: d857c3f8c4645c142b8434eddcfb26f6,
     type: 2}
+  inRange: 0
   shootCooldown: 3
 --- !u!114 &114705829146286884
 MonoBehaviour:

@@ -10,6 +10,7 @@ public class ThrowProjectile : MonoBehaviour
     [SerializeField]
     private GameObject projectilePrefab;
     
+    [SerializeField]
     private bool inRange;
     
     [SerializeField]
@@ -21,10 +22,16 @@ public class ThrowProjectile : MonoBehaviour
 	void Start ()
     {
         currentShootCooldown = 1f;
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (Vector3.Distance(player.transform.position, transform.position) < 8f)
+            inRange = true;
+        else
+            inRange = false;
+
         if(inRange)
         {
             currentShootCooldown -= Time.deltaTime;
@@ -41,6 +48,7 @@ public class ThrowProjectile : MonoBehaviour
     {
         Projectile proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<Projectile>();
         proj.direction = player.transform.position;
+        SoundManager.instance.PlaySFX(SoundManager.SFXType.ENEMY_SHOOT, 0.8f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +65,7 @@ public class ThrowProjectile : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             inRange = false;
+            Debug.Log(collision.gameObject.name);
         }
     }
 }

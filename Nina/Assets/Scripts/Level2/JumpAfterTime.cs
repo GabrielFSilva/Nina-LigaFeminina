@@ -20,5 +20,6 @@ public class JumpAfterTime : MonoBehaviour {
     private void Jump()
     {
         rb.AddForce(jumpForce, ForceMode2D.Impulse);
+        SoundManager.instance.PlaySFX(SoundManager.SFXType.JUMP, 0.8f);
     }
 }
