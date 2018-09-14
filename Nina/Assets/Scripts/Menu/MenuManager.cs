@@ -15,7 +15,13 @@ public class MenuManager : MonoBehaviour
     {
         fade.FadeIn();
     }
-    
+    private void Update()
+    {
+        /*if (Input.GetKeyDown(KeyCode.Return))
+        {
+            ScreenCapture.CaptureScreenshot("Nina.png");
+        }*/
+    }
     public void OpenScene(string scene)
     {
         if (fade.Fading)

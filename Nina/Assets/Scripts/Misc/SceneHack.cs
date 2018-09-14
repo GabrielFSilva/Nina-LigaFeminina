@@ -35,5 +35,9 @@ public class SceneHack : MonoBehaviour
             SceneManager.LoadScene("Level3");
         if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
             SceneManager.LoadScene("Cutscene4");
+        /*if (Input.GetKeyDown(KeyCode.Return))
+        {
+            ScreenCapture.CaptureScreenshot("3.png");
+        }*/
     }
 }
